@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Share Modal</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <style>
+    .circle1 {
+      position: absolute;
+      animation: move 5s alternate-reverse infinite;
+    }
+    .circle2 {
+      position: absolute;
+      animation: moveLeftDown 5s alternate-reverse infinite;
+    }
+
+    @keyframes moveLeftDown {
+      from {
+        transform: translate(3rem, -1rem);
+      }
+      to {
+        transform: translate(0, 0);
+      }
+    }
+    @keyframes move {
+      from {
+        /* left: 22rem;
+            top: 2.5rem; */
+        transform: translate(0, 0) scale(1);
+      }
+      to {
+        /* left: 25rem;
+            top: 1rem; */
+        transform: translate(3rem, -1rem) scale(1.1);
+      }
+    }
+    /* @keyframes move {
+        from{
+            left: 25rem;
+            top: 1rem;
+        }
+        to {
+            left: 22rem;
+            top: 2.5rem;
+        }
+    } */
+  </style>
+  <body>
+    <!-- wrapper -->
+    <div id="wrapper"
+      class="bg-black min-h-screen w-[100vw] p-0 m-0 relative flex justify-center items-center"
+    >
+      <!-- circles -->
+      <div
+        class="circle1 bg-orange rounded-full h-[12rem] w-[12rem] absolute top-10 left-[22rem] drop-shadow-[0px_0px_10px_orange] border border-orange shadow-lg"
+      ></div>
+      <div
+        class="circle2 bg-purple rounded-full h-[12rem] w-[12rem] absolute bottom-14 right-[23rem] drop-shadow-[0px_0px_10px_purple] border border-purple shadow-lg"
+      ></div>
+
+      <!-- CARD WRAPPER -->
+      <div
+        class="h-[30rem] w-[25rem] bg-white backdrop-blur-xl bg-opacity-10 border-2 border-gray-600 rounded-2xl border-opacity-50 flex flex-col justify-center items-center gap-4"
+      >
+        <!-- profile picture -->
+        <div class="h-[10rem] w-[10rem] rounded-full overflow-hidden mb-5">
+          <img src="abhay.jpeg" alt="" class="object-cover" />
+        </div>
+
+        <!-- name -->
+
+        <h2 class="text-2xl font-bold text-white font-serif mb-4">Abhay Singh</h2>
+
+        <!-- desgination -->
+        <div class="text-xl  text-gray-500 font-serif mb-4">Fullstack Developer</div>
+        <!-- Share flex -->
+        <div class="flex justify-between items-center gap-4">
+          <!-- share -->
+          <div id="share" class="text-gray-400 border p-1 px-6 text-sm rounded-sm inline-block cursor-pointer hover:bg-gray-400 hover:text-black transition-all duration-300"> <i class="fa-solid fa-share"></i> Share Profile</div>
+          <!-- follow -->
+          <div id="follow" class=" text-gray-400 border p-1 px-6 text-sm rounded-sm inline-block cursor-pointer hover:bg-gray-400 hover:text-black transition-all duration-300">Follow Me</div>
+        </div>
+      </div>
+
+      <!-- Modal Wrapper -->
+    <div id="modal" class="scale-0 transition-all duration-[600ms] ease-in-out w-[35rem] h-[16rem] absolute bg-gray-800 backdrop-blur-lg bg-opacity-30 border-2 border-gray-600 rounded-3xl ">
+        <!-- Heading -->
+        <div class="flex justify-between items-center  mx-12 my-4">
+            <h2 class="text-white text-3xl font-bold">
+            Share My Profile
+        </h2>
+        <!-- cross -->
+        <i id="cross" class=" fa-solid fa-xmark text-white text-4xl font-bold cursor-pointer"></i>
+        </div>
+        <!-- border line -->
+        <div class="border border-gray-600 mx-12"></div>
+        
+        <!-- sub-heading -->
+        <h2 class="text-white text-lg font-bold mx-12 my-4">
+            Share profile via
+        </h2>
+
+        <!-- social media handles -->
+        <div class="flex justify-around items-center py-4">
+            <!-- facebook -->
+            <i class="border-blue-800 bg-blue-600 border rounded-full text-5xl cursor-pointer hover:scale-125 transition-all duration-300 fa-brands fa-facebook"></i>
+            <!-- twitter -->
+            <i class="border-blue-500 bg-transparent border text-blue-500 p-2 rounded-full text-4xl cursor-pointer hover:scale-125 transition-all duration-300 fa-brands fa-twitter"></i>
+            <!-- insta -->
+            <i class="border-pink-600 bg-transparent border text-pink-600 p-2 rounded-full text-4xl cursor-pointer hover:scale-125 transition-all duration-300 fa-brands fa-instagram"></i>
+            <!-- whatsapp -->
+            <i class="border-green-600 bg-transparent border text-green-600 p-2 rounded-full text-4xl cursor-pointer hover:scale-125 transition-all duration-300 fa-brands fa-whatsapp"></i>
+            <!-- telegram -->
+            <i class="border-blue-500 bg-transparent border text-blue-500 p-2 rounded-full text-4xl cursor-pointer hover:scale-125 transition-all duration-300 fa-brands fa-telegram"></i>
+        </div>
+
+
+
+    </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a7b7095b65.js" crossorigin="anonymous"></script>
+  </body>
+</html>
